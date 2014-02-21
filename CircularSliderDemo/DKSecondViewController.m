@@ -7,17 +7,26 @@
 //
 
 #import "DKSecondViewController.h"
+#define COMPONENTRECT CGRectMake(45, 185, DK_SLIDER_SIZE-90, DK_SLIDER_SIZE-90)
 
 @interface DKSecondViewController ()
 
 @end
 
 @implementation DKSecondViewController
-
+@synthesize guidedCSlider;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    guidedCSlider = [[DKCircularSlider alloc] initWithFrame:COMPONENTRECT
+                                               withElements:@[@"Monday",@"Tuesday",@"Wednesday",@"Thursday",@"Friday",@"Saturday",@"Sunday"]
+                                           withContentImage:[UIImage imageNamed:@"pawn.png"]
+                                                  withTitle:@"Days"];
+    [[self view] addSubview:guidedCSlider];
+    [guidedCSlider movehandleToValue:1];
+    [[self view] setBackgroundColor:[UIColor grayColor]];
+
 }
 
 - (void)didReceiveMemoryWarning

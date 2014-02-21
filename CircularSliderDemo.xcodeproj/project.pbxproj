@@ -22,6 +22,12 @@
 		97CE5D5918B7C7F8007E6959 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97CE5D3818B7C7F8007E6959 /* UIKit.framework */; };
 		97CE5D6118B7C7F8007E6959 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 97CE5D5F18B7C7F8007E6959 /* InfoPlist.strings */; };
 		97CE5D6318B7C7F8007E6959 /* CircularSliderDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CE5D6218B7C7F8007E6959 /* CircularSliderDemoTests.m */; };
+		97CE5D9218B7C839007E6959 /* DKCircularSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CE5D8D18B7C839007E6959 /* DKCircularSlider.m */; };
+		97CE5D9318B7C839007E6959 /* DKRepeatableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CE5D8F18B7C839007E6959 /* DKRepeatableButton.m */; };
+		97CE5D9418B7C839007E6959 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 97CE5D9018B7C839007E6959 /* down.png */; };
+		97CE5D9518B7C839007E6959 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 97CE5D9118B7C839007E6959 /* up.png */; };
+		97CE5D9718B7EB9D007E6959 /* pawn.png in Resources */ = {isa = PBXBuildFile; fileRef = 97CE5D9618B7EB9D007E6959 /* pawn.png */; };
+		97CE5D9A18B7EE56007E6959 /* DKThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CE5D9918B7EE56007E6959 /* DKThirdViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +62,15 @@
 		97CE5D5E18B7C7F8007E6959 /* CircularSliderDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CircularSliderDemoTests-Info.plist"; sourceTree = "<group>"; };
 		97CE5D6018B7C7F8007E6959 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		97CE5D6218B7C7F8007E6959 /* CircularSliderDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircularSliderDemoTests.m; sourceTree = "<group>"; };
+		97CE5D8C18B7C839007E6959 /* DKCircularSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCircularSlider.h; sourceTree = "<group>"; };
+		97CE5D8D18B7C839007E6959 /* DKCircularSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCircularSlider.m; sourceTree = "<group>"; };
+		97CE5D8E18B7C839007E6959 /* DKRepeatableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRepeatableButton.h; sourceTree = "<group>"; };
+		97CE5D8F18B7C839007E6959 /* DKRepeatableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKRepeatableButton.m; sourceTree = "<group>"; };
+		97CE5D9018B7C839007E6959 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
+		97CE5D9118B7C839007E6959 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
+		97CE5D9618B7EB9D007E6959 /* pawn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pawn.png; sourceTree = "<group>"; };
+		97CE5D9818B7EE56007E6959 /* DKThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKThirdViewController.h; sourceTree = "<group>"; };
+		97CE5D9918B7EE56007E6959 /* DKThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKThirdViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +100,7 @@
 		97CE5D2818B7C7F8007E6959 = {
 			isa = PBXGroup;
 			children = (
+				97CE5D8B18B7C839007E6959 /* DKCicularSlider */,
 				97CE5D3A18B7C7F8007E6959 /* CircularSliderDemo */,
 				97CE5D5C18B7C7F8007E6959 /* CircularSliderDemoTests */,
 				97CE5D3318B7C7F8007E6959 /* Frameworks */,
@@ -115,6 +131,7 @@
 		97CE5D3A18B7C7F8007E6959 /* CircularSliderDemo */ = {
 			isa = PBXGroup;
 			children = (
+				97CE5D9618B7EB9D007E6959 /* pawn.png */,
 				97CE5D4318B7C7F8007E6959 /* DKAppDelegate.h */,
 				97CE5D4418B7C7F8007E6959 /* DKAppDelegate.m */,
 				97CE5D4618B7C7F8007E6959 /* Main.storyboard */,
@@ -122,6 +139,8 @@
 				97CE5D4A18B7C7F8007E6959 /* DKFirstViewController.m */,
 				97CE5D4C18B7C7F8007E6959 /* DKSecondViewController.h */,
 				97CE5D4D18B7C7F8007E6959 /* DKSecondViewController.m */,
+				97CE5D9818B7EE56007E6959 /* DKThirdViewController.h */,
+				97CE5D9918B7EE56007E6959 /* DKThirdViewController.m */,
 				97CE5D4F18B7C7F8007E6959 /* Images.xcassets */,
 				97CE5D3B18B7C7F8007E6959 /* Supporting Files */,
 			);
@@ -155,6 +174,20 @@
 				97CE5D5F18B7C7F8007E6959 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		97CE5D8B18B7C839007E6959 /* DKCicularSlider */ = {
+			isa = PBXGroup;
+			children = (
+				97CE5D8C18B7C839007E6959 /* DKCircularSlider.h */,
+				97CE5D8D18B7C839007E6959 /* DKCircularSlider.m */,
+				97CE5D8E18B7C839007E6959 /* DKRepeatableButton.h */,
+				97CE5D8F18B7C839007E6959 /* DKRepeatableButton.m */,
+				97CE5D9018B7C839007E6959 /* down.png */,
+				97CE5D9118B7C839007E6959 /* up.png */,
+			);
+			name = DKCicularSlider;
+			path = DKCircularSlider/DKCicularSlider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +267,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97CE5D9718B7EB9D007E6959 /* pawn.png in Resources */,
+				97CE5D9518B7C839007E6959 /* up.png in Resources */,
 				97CE5D5018B7C7F8007E6959 /* Images.xcassets in Resources */,
 				97CE5D3F18B7C7F8007E6959 /* InfoPlist.strings in Resources */,
 				97CE5D4818B7C7F8007E6959 /* Main.storyboard in Resources */,
+				97CE5D9418B7C839007E6959 /* down.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,8 +291,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97CE5D9A18B7EE56007E6959 /* DKThirdViewController.m in Sources */,
+				97CE5D9218B7C839007E6959 /* DKCircularSlider.m in Sources */,
 				97CE5D4118B7C7F8007E6959 /* main.m in Sources */,
 				97CE5D4E18B7C7F8007E6959 /* DKSecondViewController.m in Sources */,
+				97CE5D9318B7C839007E6959 /* DKRepeatableButton.m in Sources */,
 				97CE5D4518B7C7F8007E6959 /* DKAppDelegate.m in Sources */,
 				97CE5D4B18B7C7F8007E6959 /* DKFirstViewController.m in Sources */,
 			);
@@ -467,6 +506,7 @@
 				97CE5D6818B7C7F8007E6959 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		97CE5D6918B7C7F8007E6959 /* Build configuration list for PBXNativeTarget "CircularSliderDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +515,7 @@
 				97CE5D6B18B7C7F8007E6959 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

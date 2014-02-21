@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DKCircularSlider.h"
 
 @interface DKSecondViewController : UIViewController
+@property (nonatomic,retain) DKCircularSlider *guidedCSlider;
 
 @end

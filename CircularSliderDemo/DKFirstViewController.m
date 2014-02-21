@@ -7,17 +7,25 @@
 //
 
 #import "DKFirstViewController.h"
+#define COMPONENTRECT CGRectMake(45, 185, DK_SLIDER_SIZE-90, DK_SLIDER_SIZE-90)
 
 @interface DKFirstViewController ()
 
 @end
 
 @implementation DKFirstViewController
-
+@synthesize simpleCSlider;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    simpleCSlider = [[DKCircularSlider alloc] initWithFrame:COMPONENTRECT
+                                                   usingMax:99
+                                                   usingMin:1
+                                           withContentImage:[UIImage imageNamed:@"sensitivity"]
+                                                  withTitle:@"Sensitivity"];
+    [[self view] addSubview:simpleCSlider];
+    [simpleCSlider movehandleToValue:10];
+    [[self view] setBackgroundColor:[UIColor grayColor]];
 }
 
 - (void)didReceiveMemoryWarning
