@@ -53,13 +53,17 @@
           usingMin:(float) min
   withContentImage:(UIImage *)contentImage
          withTitle:(NSString *)title
+        withTarget:(id)target
+     usingSelector:(SEL)selector
 {
     return [self initWithFrame:frame
                       usingMax:max
                       usingMin:min
         withRepresantationMode:DKCircularSliderRepresantationModeNormal
               withContentImage:contentImage
-                     withTitle:title];
+                     withTitle:title
+                    withTarget:target
+                 usingSelector:selector];
 }
 
 -(id)initWithFrame:(CGRect)frame
@@ -67,10 +71,15 @@
           usingMin:(float) min
 withRepresantationMode:(DKCircularSliderRepresantationMode)represantationMode
   withContentImage:(UIImage *)contentImage
-         withTitle:(NSString *)title{
+         withTitle:(NSString *)title
+        withTarget:(id)target
+     usingSelector:(SEL)selector
+{
     self = [super initWithFrame:frame];
     
     if(self){
+        self.target = target;
+        self.selector = selector;
         self.opaque = NO;
         self.represantationMode = represantationMode;
         radius = self.frame.size.width/2 - DK_SAFEAREA_PADDING;
@@ -202,18 +211,18 @@ withRepresantationMode:(DKCircularSliderRepresantationMode)represantationMode
     [self addSubview:btnMinorDown];
     [self addSubview:btnMajorUp];
     [self addSubview:btnMajorDown];
-
+    
 }
 
 
 -(void)increaseValue:(UIButton *)sender
 {
-    float val = self.currentValue + 1 + [DKRepetableButton getSpeedAndIncreaseSpeed] ;
+    float val = self.currentValue + 1 + [DKRepeatableButton getSpeedAndIncreaseSpeed] ;
     [self movehandleToValue:val];
 }
 -(void)decreaseValue:(UIButton *)sender
 {
-    float val = self.currentValue - 1 + [DKRepetableButton getSpeedAndIncreaseSpeed] ;
+    float val = self.currentValue - 1 - [DKRepeatableButton getSpeedAndIncreaseSpeed] ;
     [self movehandleToValue:val];
 }
 
@@ -234,13 +243,17 @@ withRepresantationMode:(DKCircularSliderRepresantationMode)represantationMode
       withElements:(NSArray *)elements
   withContentImage:(UIImage *)contentImage
          withTitle:(NSString *)title
+        withTarget:(id)target
+     usingSelector:(SEL)selector
 {
     self = [self initWithFrame:frame
                       usingMax:elements.count
                       usingMin:1
         withRepresantationMode:DKCircularSliderRepresantationModeValues
               withContentImage:contentImage
-                     withTitle:title];
+                     withTitle:title
+                    withTarget:target
+                 usingSelector:selector];
     
     if (self) {
         values = elements;
@@ -253,10 +266,10 @@ withRepresantationMode:(DKCircularSliderRepresantationMode)represantationMode
                     WithRect:(CGRect)rect
                  AndSelector:(SEL)selector
 {
-    DKRepetableButton *nrBtn = [[DKRepetableButton alloc] initWithFrame:rect
-                                                                 withTarget:target
-                                                           withRepeatAction:selector
-                                                                  withImage:image];
+    DKRepeatableButton *nrBtn = [[DKRepeatableButton alloc] initWithFrame:rect
+                                                               withTarget:target
+                                                         withRepeatAction:selector
+                                                                withImage:image];
     return nrBtn;
 }
 
@@ -302,6 +315,8 @@ withRepresantationMode:(DKCircularSliderRepresantationMode)represantationMode
             _textField.text = [NSString stringWithFormat:@"%d",self.currentValue];
             break;
     }
+    [[self target] performSelector:[self selector]
+                        withObject:self];
 }
 
 -(NSString *) getTextValue

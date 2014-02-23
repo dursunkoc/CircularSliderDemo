@@ -40,24 +40,32 @@ typedef NS_ENUM(NSInteger, DKCircularSliderRepresantationMode) {
 @property (nonatomic) float minValue;
 @property (nonatomic) int majorStep;
 @property (nonatomic, assign) DKCircularSliderRepresantationMode represantationMode;
+@property (nonatomic, assign) id target;
+@property (nonatomic, assign) SEL selector;
 
 -(id)initWithFrame:(CGRect)frame
           usingMax:(float) max
           usingMin:(float) min
   withContentImage:(UIImage *)contentImage
-         withTitle:(NSString *)title;
+         withTitle:(NSString *)title
+        withTarget:(id)target
+     usingSelector:(SEL)selector;
 
 -(id)initWithFrame:(CGRect)frame
           usingMax:(float) max
           usingMin:(float) min
 withRepresantationMode:(DKCircularSliderRepresantationMode)represantationMode
   withContentImage:(UIImage *)contentImage
-         withTitle:(NSString *)title;
+         withTitle:(NSString *)title
+        withTarget:(id)target
+     usingSelector:(SEL)selector;
 
 -(id)initWithFrame:(CGRect)frame
       withElements:(NSArray *)elements
   withContentImage:(UIImage *)contentImage
-         withTitle:(NSString *)title;
+         withTitle:(NSString *)title
+        withTarget:(id)target
+     usingSelector:(SEL)selector;
 
 
 -(void)movehandleToValue:(float)value;

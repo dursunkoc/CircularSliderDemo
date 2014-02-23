@@ -33,11 +33,15 @@
                                                  usingMin:0
                                    withRepresantationMode:DKCircularSliderRepresantationModeTime
                                          withContentImage:[UIImage imageNamed:@"pawn.png"]
-                                                withTitle:@"time"];
+                                                withTitle:@"time" withTarget:self usingSelector:@selector(sliderChange:)];
     [[self view] addSubview:timeCSlider];
     [timeCSlider movehandleToValue:1];
     [[self view] setBackgroundColor:[UIColor grayColor]];
 
+}
+-(void)sliderChange:(DKCircularSlider *)sender
+{
+    NSLog(@"Value Changed (%@)",[sender getTextValue]);
 }
 
 - (void)didReceiveMemoryWarning

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DKRepetableButton : UIButton
+@interface DKRepeatableButton : UIButton
 @property (nonatomic) SEL repeatAction;
 @property (nonatomic) id target;
 @property (nonatomic) UIImageView *myImageView;

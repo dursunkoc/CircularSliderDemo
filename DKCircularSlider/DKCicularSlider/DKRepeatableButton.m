@@ -9,7 +9,7 @@
 #import "DKRepeatableButton.h"
 #define NRB_SPEED_FACTOR 3
 
-@implementation DKRepetableButton
+@implementation DKRepeatableButton
 NSTimer *timer;
 static int speed = 0;
 - (id)initWithFrame:(CGRect)frame

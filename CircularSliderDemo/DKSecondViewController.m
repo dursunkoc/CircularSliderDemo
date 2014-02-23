@@ -22,11 +22,15 @@
     guidedCSlider = [[DKCircularSlider alloc] initWithFrame:COMPONENTRECT
                                                withElements:@[@"Monday",@"Tuesday",@"Wednesday",@"Thursday",@"Friday",@"Saturday",@"Sunday"]
                                            withContentImage:[UIImage imageNamed:@"pawn.png"]
-                                                  withTitle:@"Days"];
+                                                  withTitle:@"Days"
+                                                 withTarget:self usingSelector:@selector(sliderChange:)];
     [[self view] addSubview:guidedCSlider];
     [guidedCSlider movehandleToValue:1];
     [[self view] setBackgroundColor:[UIColor grayColor]];
-
+}
+-(void)sliderChange:(DKCircularSlider *)sender
+{
+    NSLog(@"Value Changed (%@)",[sender getTextValue]);
 }
 
 - (void)didReceiveMemoryWarning

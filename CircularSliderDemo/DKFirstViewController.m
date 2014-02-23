@@ -22,12 +22,15 @@
                                                    usingMax:99
                                                    usingMin:1
                                            withContentImage:[UIImage imageNamed:@"sensitivity"]
-                                                  withTitle:@"Sensitivity"];
+                                                  withTitle:@"Sensitivity" withTarget:self usingSelector:@selector(sliderChange:)];
     [[self view] addSubview:simpleCSlider];
     [simpleCSlider movehandleToValue:10];
     [[self view] setBackgroundColor:[UIColor grayColor]];
 }
-
+-(void)sliderChange:(DKCircularSlider *)sender
+{
+    NSLog(@"Value Changed (%@)",[sender getTextValue]);
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
