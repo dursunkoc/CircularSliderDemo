@@ -315,8 +315,11 @@ withRepresantationMode:(DKCircularSliderRepresantationMode)represantationMode
             _textField.text = [NSString stringWithFormat:@"%d",self.currentValue];
             break;
     }
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     [[self target] performSelector:[self selector]
                         withObject:self];
+#pragma clang diagnostic pop
 }
 
 -(NSString *) getTextValue
